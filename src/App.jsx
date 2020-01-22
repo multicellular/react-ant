@@ -6,9 +6,8 @@ import { enquireScreen } from 'enquire-js';
 import { Nav, Footer } from '@pages/layouts';
 import Routes from '@configs/router.config'
 
-import {
-  Footer11DataSource,
-} from '@utils/data.source';
+import { Footer11DataSource } from '@utils/data.source';
+// import { BaseApi } from '@apis'
 
 let isMobile;
 enquireScreen((b) => {
@@ -16,6 +15,8 @@ enquireScreen((b) => {
 });
 
 const { location } = window;
+
+// BaseApi.powers();
 
 export default class App extends React.Component {
   constructor(props) {

@@ -1,7 +1,6 @@
 import React from 'react'
 import {
-    Route, Redirect, BrowserRouter,
-    Switch
+    Route, Redirect, BrowserRouter, Switch
 } from 'react-router-dom'
 import { isLogin } from './common'
 
