@@ -3,11 +3,10 @@
 import React from 'react';
 import { enquireScreen } from 'enquire-js';
 
-import { Nav, Footer } from '@pages/base';
-import BrowserRouter from '@configs/router'
+import { Nav, Footer } from '@pages/layouts';
+import Routes from '@configs/router.config'
 
 import {
-  Nav30DataSource,
   Footer11DataSource,
 } from '@utils/data.source';
 
@@ -40,11 +39,10 @@ export default class App extends React.Component {
         <Nav
           id="Nav3_0"
           key="Nav3_0"
-          dataSource={Nav30DataSource}
           isMobile={this.state.isMobile}
         />
         <div className="main">
-          <BrowserRouter />
+          <Routes />
         </div>
         <Footer
           id="Footer1_1"

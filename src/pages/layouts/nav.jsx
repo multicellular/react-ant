@@ -7,6 +7,141 @@ import './less/nav.less'
 
 const { Item, SubMenu } = Menu;
 
+const dataSource = {
+  wrapper: { className: 'header3 home-page-wrapper jzih1dpqqrg-editor_css' },
+  page: { className: 'home-page' },
+  logo: {
+    className: 'header3-logo jzjgnya1gmn-editor_css',
+    children:
+      'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*-J8NSLj9rbsAAAAAAAAAAABkARQnAQ',
+  },
+  Menu: {
+    className: 'header3-menu',
+    children: [
+      {
+        name: 'item1',
+        className: 'header3-item',
+        children: {
+          href: '/',
+          children: [
+            {
+              children: (
+                <>
+                  <p>首页</p>
+                </>
+              ),
+              name: 'text',
+            },
+          ],
+        },
+      },
+      {
+        name: 'item2',
+        className: 'header3-item',
+        children: {
+          href: '/user/info',
+          children: [
+            {
+              children: (
+                <>
+                  <p>用户设置</p>
+                </>
+              ),
+              name: 'text',
+            },
+          ],
+        },
+      },
+      {
+        name: 'item3',
+        className: 'header3-item',
+        children: {
+          href: '/user/assets',
+          children: [
+            {
+              children: (
+                <>
+                  <p>我的资产</p>
+                </>
+              ),
+              name: 'text',
+            },
+          ],
+        },
+        // subItem: [
+        //   {
+        //     className: 'item-sub',
+        //     children: {
+        //       className: 'item-sub-item jzj8295azrs-editor_css',
+        //       children: [
+        //         {
+        //           name: 'image0',
+        //           className: 'item-image jzj81c9wabh-editor_css',
+        //           children:
+        //             'https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*4_S6ToPfj-QAAAAAAAAAAABkARQnAQ',
+        //         },
+        //       ],
+        //     },
+        //     name: 'sub~jzj8hceysgj',
+        //   },
+        // ],
+      },
+      {
+        name: 'item4',
+        className: 'header3-item',
+        children: {
+          href: '#',
+          children: [
+            {
+              children: (
+                <>
+                  <p>帮助中心</p>
+                </>
+              ),
+              name: 'text',
+            },
+          ],
+        },
+      },
+      {
+        name: 'item5',
+        className: 'header3-item',
+        children: {
+          href: '/login',
+          children: [
+            {
+              children: (
+                <>
+                  <p>登录</p>
+                </>
+              ),
+              name: 'text',
+            },
+          ],
+        },
+      },
+      {
+        name: 'item6',
+        className: 'header3-item',
+        children: {
+          href: '/register',
+          children: [
+            {
+              children: (
+                <>
+                  <p>注册</p>
+                </>
+              ),
+              name: 'text',
+            },
+          ],
+        },
+      },
+    ],
+  },
+  mobileMenu: { className: 'header3-mobile-menu' },
+};
+
 class Header3 extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +158,7 @@ class Header3 extends React.Component {
   };
 
   render() {
-    const { dataSource, isMobile, ...props } = this.props;
+    const { isMobile, ...props } = this.props;
     const { phoneOpen } = this.state;
     const navData = dataSource.Menu.children;
     const navChildren = navData.map((item) => {
