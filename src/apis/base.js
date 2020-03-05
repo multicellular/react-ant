@@ -4,8 +4,21 @@ import request from './request'
 export function powers() {
     return request({
         url: `/powers`,
-        method: 'get',
-        params: {}
+        method: 'get'
+    });
+}
+
+export function powers_outs() {
+    return request({
+        url: `/powers/outs`,
+        method: 'get'
+    });
+}
+
+export function powers_id(id) {
+    return request({
+        url: `/powers/${id}`,
+        method: 'get'
     });
 }
 
