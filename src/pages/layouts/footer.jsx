@@ -3,7 +3,6 @@ import TweenOne from "rc-tween-one";
 import OverPack from "rc-scroll-anim/lib/ScrollOverPack";
 import QueueAnim from "rc-queue-anim";
 import { Row, Col } from "antd";
-import { Link } from "react-router-dom";
 
 import "./less/footer.less";
 
@@ -39,22 +38,22 @@ class Footer extends React.Component {
             <Col className="block" xs={24} md={6}>
               <h2>产品</h2>
               <div>
-                <Link>产品更新记录</Link>
-                <Link>API文档</Link>
-                <Link>快速入门</Link>
+                <a href="/">产品更新记录</a>
+                <a href="/">API文档</a>
+                <a href="/">快速入门</a>
               </div>
             </Col>
             <Col className="block" xs={24} md={6}>
               <h2>关于</h2>
               <div>
-                <Link>FAQ</Link>
-                <Link>联系我们</Link>
+                <a href="/">FAQ</a>
+                <a href="/">联系我们</a>
               </div>
             </Col>
             <Col className="block" xs={24} md={6}>
               <h2>资源</h2>
               <div>
-                <Link>Ant Design</Link>
+                <a href="/">Ant Design</a>
               </div>
             </Col>
           </QueueAnim>
