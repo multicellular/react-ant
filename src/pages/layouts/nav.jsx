@@ -3,7 +3,11 @@ import TweenOne from "rc-tween-one";
 import { Menu } from "antd";
 import { Link } from "react-router-dom";
 
+import Logo from "./Logo";
+
 import "./less/nav.less";
+
+import { connect } from "react-redux";
 
 const { Item } = Menu;
 
@@ -23,7 +27,7 @@ class Header3 extends React.Component {
   };
 
   render() {
-    const { isMobile, ...props } = this.props;
+    const { isLogin, userInfo, isMobile, dispatch, ...props } = this.props;
     const { phoneOpen } = this.state;
     const navs = [
       {
@@ -71,11 +75,12 @@ class Header3 extends React.Component {
             animation={{ x: -30, type: "from", ease: "easeOutQuad" }}
             className="header3-logo jzjgnya1gmn-editor_css"
           >
-            <img
+            {/* <img
               width="100%"
               src="https://gw.alipayobjects.com/mdn/rms_ae7ad9/afts/img/A*-J8NSLj9rbsAAAAAAAAAAABkARQnAQ"
               alt="img"
-            />
+            /> */}
+            <Logo />
           </TweenOne>
           {isMobile && (
             <div
@@ -115,6 +120,13 @@ class Header3 extends React.Component {
               theme="light"
             >
               {navChildren}
+              {isLogin && (
+                <Item className="header3-item">
+                  <Link to="/" className={`header3-item-block`}>
+                    {userInfo.name}
+                  </Link>
+                </Item>
+              )}
             </Menu>
           </TweenOne>
         </div>
@@ -123,4 +135,10 @@ class Header3 extends React.Component {
   }
 }
 
-export default Header3;
+export default connect(
+  state => ({
+    isLogin: state.global.isLogin,
+    userInfo: state.global.userInfo
+  }),
+  null
+)(Header3);
